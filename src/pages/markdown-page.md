@@ -1,0 +1,9 @@
+---
+title: Markdown page example
+description: This is markdown page description
+image: /img/icon.png
+---
+
+# Markdown page example
+
+You don't need React to write simple standalone pages.

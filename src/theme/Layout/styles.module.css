@@ -1,0 +1,61 @@
+html,
+body {
+  height: 100%;
+}
+
+.mainWrapper {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Docusaurus-specific utility class */
+:global(.docusaurus-mt-lg) {
+  margin-top: 3rem;
+}
+
+:global(#__docusaurus) {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 20;
+  background-image: url('/img/blues.svg');
+}
+.heroBanner {
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.heroText {
+  text-align: center;
+}
+
+@media screen and (min-width: 996px) {
+  .heroBanner {
+    padding: 6rem;
+    margin-bottom: 0;
+  }
+
+  .heroTitle {
+    font-size: 8vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .heroBanner {
+    padding: 2rem;
+    margin-bottom: 0;
+  }
+  .heroTitle {
+    font-size: 56px;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,221 @@
+# local_backend: true
+backend:
+  name: git-gateway
+  repo: githubuser/repo
+  branch: main 
+media_folder: 'static/img'
+collections:
+  - name: 'header'
+    label: 'Header Setup'
+    extension: 'json'
+    editor:
+       preview: false
+    files:
+     - file: 'data/header.json'
+       label: 'Update Header Area'
+       name: 'header'
+       widget: list
+       fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Tag Line', name: 'tagline', widget: 'text' }
+          - { label: 'Image', name: 'image', widget: 'image', required: false }
+          - { label: 'Intro', name: 'intro', widget: 'string' }
+  - name: 'welcome'
+    label: 'Home Page'
+    extension: 'md'
+    editor:
+      preview: false
+    files:
+     - file: 'docs/intro.md'
+       label: 'Update Home Page'
+       name: 'intro'
+       widget: list
+       fields:
+          - { label: 'Sidebar Position', name: 'sidebar_position', widget: 'number' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'text' }
+          - { label: 'Image', name: 'image', widget: 'image' , required: false}
+          - { name: 'body', label: 'Content Article', widget: 'markdown' }
+  - name: 'thenet'
+    label: 'Network Config'
+    extension: 'json'
+    editor:
+      preview: false
+    files:
+     - file: 'docs/the-network/_category_.json'
+       label: 'The Network Doc Configuration'
+       name: 'categories'
+       widget: list
+       fields:
+          - { label: 'Label', name: 'label', widget: 'string' }
+          - { label: 'Position', name: 'position', widget: 'number' }
+          - name: 'link'
+            label: 'Link' 
+            widget: 'object'
+            fields:
+             - { name: 'description', label: 'Description', widget: 'string'}
+  - name: 'netes'
+    label: 'Network Docs'
+    folder: 'docs/the-network'
+    slug: '{{slug}}'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { name: 'sidebar_position', label: 'Position', widget: 'number' }
+      - { name: 'title', label: 'Title', widget: 'string' }
+      - { name: 'description', label: 'Description', widget: 'text' }
+      - { name: 'image', label: 'Image', widget: 'image', required: false }
+      - { name: 'body', label: 'Content Article', widget: 'markdown' }
+  - name: 'theprot'
+    label: 'Protocol Config'
+    extension: 'json'
+    editor:
+      preview: false
+    files:
+     - file: 'docs/the-protocol/_category_.json'
+       label: 'The Protocol Doc Configuration'
+       name: 'categories'
+       widget: list
+       fields:
+          - { label: 'Label', name: 'label', widget: 'string' }
+          - { label: 'Position', name: 'position', widget: 'number' }
+          - name: 'link'
+            label: 'Link' 
+            widget: 'object'
+            fields:
+             - { name: 'description', label: 'Description', widget: 'string'}
+  - name: 'prosts'
+    label: 'Protocol Docs'
+    folder: 'docs/the-protocol'
+    slug: '{{slug}}'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { name: 'sidebar_position', label: 'Position', widget: 'number' }
+      - { name: 'title', label: 'Title', widget: 'string' }
+      - { name: 'description', label: 'Description', widget: 'text' }
+      - { name: 'image', label: 'Image', widget: 'image', required: false }
+      - { name: 'body', label: 'Content Article', widget: 'markdown' }
+  - name: 'thehard'
+    label: 'Hardware Config'
+    extension: 'json'
+    editor:
+      preview: false
+    files:
+     - file: 'docs/the-hardware/_category_.json'
+       label: 'The Hardware Doc Configuration'
+       name: 'categories'
+       widget: list
+       fields:
+          - { label: 'Label', name: 'label', widget: 'string' }
+          - { label: 'Position', name: 'position', widget: 'number' }
+          - name: 'link'
+            label: 'Link' 
+            widget: 'object'
+            fields:
+             - { name: 'description', label: 'Description', widget: 'string'}
+  - name: 'hardisa'
+    label: 'Hardware Docs'
+    folder: 'docs/the-hardware'
+    slug: '{{slug}}'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { name: 'sidebar_position', label: 'Position', widget: 'number' }
+      - { name: 'title', label: 'Title', widget: 'string' }
+      - { name: 'description', label: 'Description', widget: 'text' }
+      - { name: 'image', label: 'Image', widget: 'image', required: false }
+      - { name: 'body', label: 'Content Article', widget: 'markdown' }
+  - name: 'road'
+    label: 'Roadmap Page'
+    extension: 'md'
+    editor:
+      preview: false
+    files:
+     - file: 'docs/roadmap.md'
+       label: 'Update Roadmap Page'
+       name: 'roadmap'
+       widget: list
+       fields:
+          - { label: 'Sidebar Position', name: 'sidebar_position', widget: 'number' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'text' }
+          - { label: 'Image', name: 'image', widget: 'image' , required: false}
+          - { name: 'body', label: 'Content Article', widget: 'markdown' }
+  - name: 'ocan'
+    label: 'On-Chain Config'
+    extension: 'json'
+    editor:
+      preview: false
+    files:
+     - file: 'docs/on-chain/_category_.json'
+       label: 'On-Chain Doc Configuration'
+       name: 'categories'
+       widget: list
+       fields:
+          - { label: 'Label', name: 'label', widget: 'string' }
+          - { label: 'Position', name: 'position', widget: 'number' }
+          - name: 'link'
+            label: 'Link' 
+            widget: 'object'
+            fields:
+             - { name: 'description', label: 'Description', widget: 'string'}
+  - name: 'ocanoa'
+    label: 'On-Chain Docs'
+    folder: 'docs/on-chain'
+    slug: '{{slug}}'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { name: 'sidebar_position', label: 'Position', widget: 'number' }
+      - { name: 'title', label: 'Title', widget: 'string' }
+      - { name: 'description', label: 'Description', widget: 'text' }
+      - { name: 'image', label: 'Image', widget: 'image', required: false }
+      - { name: 'body', label: 'Content Article', widget: 'markdown' }
+  - name: 'resou'
+    label: 'Resources Config'
+    extension: 'json'
+    editor:
+      preview: false
+    files:
+     - file: 'docs/resources/_category_.json'
+       label: 'The Resources Doc Configuration'
+       name: 'categories'
+       widget: list
+       fields:
+          - { label: 'Label', name: 'label', widget: 'string' }
+          - { label: 'Position', name: 'position', widget: 'number' }
+          - name: 'link'
+            label: 'Link' 
+            widget: 'object'
+            fields:
+             - { name: 'description', label: 'Description', widget: 'string'}
+  - name: 'resouor'
+    label: 'Resources Docs'
+    folder: 'docs/resources'
+    slug: '{{slug}}'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { name: 'sidebar_position', label: 'Position', widget: 'number' }
+      - { name: 'title', label: 'Title', widget: 'string' }
+      - { name: 'description', label: 'Description', widget: 'text' }
+      - { name: 'image', label: 'Image', widget: 'image', required: false }
+      - { name: 'body', label: 'Content Article', widget: 'markdown' }
+  - name: 'pages'
+    label: 'Static Pages'
+    folder: 'src/pages'
+    slug: '{{slug}}'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { name: 'title', label: 'Title', widget: 'string' }
+      - { name: 'description', label: 'Description', widget: 'text' }
+      - { name: 'image', label: 'Image', widget: 'image', required: false }
+      - { name: 'body', label: 'Content Article', widget: 'markdown' }
